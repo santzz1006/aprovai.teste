@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AprovAI | Entrar ou criar conta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" crossorigin href="../assets/login-yIz7n_JP.css">
+  <link rel="stylesheet" crossorigin href="../assets/dashboard-snCa0q9C.css">
+  <link rel="stylesheet" crossorigin href="../assets/portal-theme-BWIrVhcu.css">
+</head>
+<body class="auth-page">
+  <div class="auth-bg-icons" aria-hidden="true">
+    <i data-lucide="graduation-cap"></i>
+    <i data-lucide="book-open-check"></i>
+    <i data-lucide="pencil-ruler"></i>
+    <i data-lucide="calculator"></i>
+    <i data-lucide="brain-circuit"></i>
+    <i data-lucide="calendar-check"></i>
+    <i data-lucide="pen-tool"></i>
+    <i data-lucide="badge-help"></i>
+  </div>
+
+  <main class="auth-shell">
+    <section class="auth-visual" aria-label="AprovAI">
+      <a class="auth-logo" href="../index.html" aria-label="Voltar para AprovAI">
+        <img src="../assets/aprovai.croco-DQjPHEo6.png" alt="AprovAI">
+      </a>
+      <div class="auth-hero-copy"> 
+        <span class="eyebrow">Portal do aluno</span>
+        <h1>Entre no seu plano ENEM.</h1>
+        <p>Seu diagnóstico, plano de 30 dias, redações, questões e progresso ficam salvos com segurança na sua conta.</p>
+      </div>
+      <img class="auth-croco" src="../assets/croco.pose6.transparent-CP1WeBiC.png" alt="" aria-hidden="true">
+    </section>
+
+    <section class="auth-card" aria-labelledby="authTitle">
+      <div class="auth-card-head">
+        <span class="eyebrow">Acesso AprovAI</span>
+        <h2 id="authTitle">Comece ou continue.</h2>
+        <p>Use um e-mail real para recuperar senha e manter seu progresso salvo.</p>
+      </div>
+
+      <div class="auth-tabs" role="tablist" aria-label="Escolha entrar ou cadastrar">
+        <button class="auth-tab active" type="button" data-auth-mode="login">Já tenho conta</button>
+        <button class="auth-tab" type="button" data-auth-mode="signup">Criar conta</button>
+      </div>
+
+      <form class="auth-form active" id="loginForm" data-auth-panel="login">
+        <label>
+          <span>E-mail</span>
+          <input id="loginEmail" type="email" autocomplete="email" placeholder="voce@email.com" required>
+        </label>
+        <label>
+          <span>Senha</span>
+          <div class="password-field">
+            <input id="loginPassword" type="password" autocomplete="current-password" placeholder="Sua senha" required>
+            <button class="password-toggle" type="button" data-toggle-password="loginPassword" aria-label="Mostrar senha">
+              <i data-lucide="eye"></i>
+            </button>
+          </div>
+        </label>
+        <button class="primary-button auth-submit" type="submit">
+          <i data-lucide="log-in"></i>
+          Entrar
+        </button>
+        <button class="auth-link-button" type="button" id="showResetButton">Esqueci minha senha</button>
+      </form>
+
+      <form class="auth-form" id="signupForm" data-auth-panel="signup">
+        <label>
+          <span>Nome</span>
+          <input id="signupName" type="text" autocomplete="given-name" minlength="2" maxlength="40" placeholder="Seu nome" required>
+        </label>
+        <label>
+          <span>E-mail</span>
+          <input id="signupEmail" type="email" autocomplete="email" placeholder="voce@email.com" required>
+        </label>
+        <label>
+          <span>Senha segura</span>
+          <div class="password-field">
+            <input id="signupPassword" type="password" autocomplete="new-password" minlength="8" placeholder="Mínimo 8 caracteres" required>
+            <button class="password-toggle" type="button" data-toggle-password="signupPassword" aria-label="Mostrar senha">
+              <i data-lucide="eye"></i>
+            </button>
+          </div>
+        </label>
+        <div class="password-meter" aria-live="polite">
+          <div class="password-meter-track"><span id="passwordMeterFill"></span></div>
+          <strong id="passwordMeterLabel">Digite uma senha.</strong>
+          <small>Use letras maiúsculas, minúsculas, número e símbolo.</small>
+        </div>
+        <label class="terms-row">
+          <input id="termsAccepted" type="checkbox" required>
+          <span>Li e aceito os <a href="../direitos-termos.html" target="_blank" rel="noreferrer">termos de uso e privacidade</a>.</span>
+        </label>
+        <button class="primary-button auth-submit" type="submit">
+          <i data-lucide="user-plus"></i>
+          Criar minha conta
+        </button>
+      </form>
+
+      <form class="auth-form reset-form" id="resetForm" data-auth-panel="reset">
+        <button class="auth-back-button" type="button" id="backToLoginButton">
+          <i data-lucide="arrow-left"></i>
+          Voltar ao login
+        </button>
+        <label>
+          <span>E-mail da conta</span>
+          <input id="resetEmail" type="email" autocomplete="email" placeholder="voce@email.com" required>
+        </label>
+        <button class="secondary-button auth-submit" type="submit">
+          <i data-lucide="mail"></i>
+          Enviar link de recuperação
+        </button>
+      </form>
+
+      <div class="auth-feedback" id="authFeedback" role="status" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="../js/site-footer.js?v=footer-legal-2"></script>
+  <script src="../js/supabaseConfig.js?v=auth-2"></script>
+  <script src="../js/vendor/supabase.js?v=2.106.2"></script>
+  <script src="../js/supabaseBrowser.js?v=auth-1"></script>
+  <script src="../js/auth.js?v=auth-4"></script>
+</body>
+</html>
+

@@ -1,0 +1,1 @@
+(function(){const a=window.APROVAI_SUPABASE||{};if(!window.supabase||!a.url||!a.anonKey){window.aprovaiSupabaseError="Supabase n\xE3o carregado. Confira os scripts de autentica\xE7\xE3o.";return}window.aprovaiSupabase=window.supabase.createClient(a.url,a.anonKey,{auth:{autoRefreshToken:!0,persistSession:!0,detectSessionInUrl:!0}})})();
